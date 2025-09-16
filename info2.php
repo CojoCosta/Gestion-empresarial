@@ -45,7 +45,29 @@
 
 
     //Arrays
-
+    //Array unidimensional asociativo
+    $array2 = array("nombre" => "David", "edad" => 37);
+    foreach ($array2 as $nombre => $edad) {
+        print $nombre." : ".$edad;
+        print "<br>";
+    }
     
+    //Array bidimensional asociativo
+    $array3=[
+        "usuario1" => ["nombre" => "Italiani", "edad" => 37],
+        "usuario2" => ["nombre" => "Hugo", "edad" => 22],
+        "usuario3" => ["nombre" => "Diego", "edad" => 25]
+    ];
+    foreach ($array3 as $usuarios => $datos) {
+        print $usuarios." : ";
+        print "<br>";
+        foreach ($datos as $nombre => $edad) {
+            print $nombre." : ".$edad;
+            print "<br>"; 
+        }
+        print "<hr>";
+    }
+
+
     /*Librerias de funciones 
     y enlazarlas con el programa principal*/
