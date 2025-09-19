@@ -98,9 +98,17 @@ function transporte($mascota)
         print $num%2==0 ? "Es par": "Es impar";
     }
 
-    function fibonacci(){
-        while($fin < 10000){
-            
+    // function fibonacci(){
+    //     while($fin < 10000){
+
+    //     }
+    // }
+
+    function tablaMultiplicar(){
+        for ($i = 0; $i <= 10; $i++) { 
+            for ($j = 0; $j <= 10 ; $j++) { 
+                print $i * $j;
+            }
         }
     }
 }
