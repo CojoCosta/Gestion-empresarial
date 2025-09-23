@@ -3,17 +3,21 @@ function random()
 {
     print rand(1, 100);
 }
+print "Funcion 1: ";
+print random() . "<br>";
 
 function sumar($dato1, $dato2)
 {
     return $dato1 + $dato2;
 }
+print "Funcion 2: " . sumar(2, 2) . "<br>";
 
 
 function radio($dato)
 {
-    return $dato * $dato * pi();
+    return $dato ** 2 * pi();
 }
+print "Funcion 3: " . radio(3) . "<br>";
 
 
 function escribirAleatorio()
@@ -39,6 +43,8 @@ function escribirAleatorio()
             break;
     }
 }
+print "Funcion 4: ";
+print escribirAleatorio() . "<br>";
 
 function multiplos($num1, $num2)
 {
@@ -48,6 +54,7 @@ function multiplos($num1, $num2)
         print "No son multiplos";
     }
 }
+print "Funcion 5: " . multiplos(2, 8) . "<br>";
 
 function entradaMuseo($edad)
 {
@@ -65,50 +72,92 @@ function entradaMuseo($edad)
         print $entrada = 0;
     }
 }
+print "Funcion 6: ";
+print entradaMuseo(18) . "<br>";
 
 function transporte($mascota)
 {
     switch ($mascota) {
         case "gato":
-            print "gatos: " + $precio = 1 + "€";
-            break;
         case "huron":
-            print "hurones: " + $precio = 1 + "€";
+            print "gatos: " . $precio = (1) . "€";
             break;
         case "perro":
-            print "perros: " + $precio = 1.5 + "€";
+            print "perros: " . $precio = (1.5) . "€";
             break;
         case "loro":
-            print "loros: " + $precio = 1 + "€";
+            print "loros: " . $precio = (1) . "€";
             break;
         default:
             print "Mascota no permitida";
             break;
     }
+}
+print "Funcion 7: ";
+print transporte("perro") . "<br>";
 
-    function bingo($edad){
-        if($edad < 75 || $edad > 80){
-            print "No puede participar";
-        } else{
-            print "El premio es: " + 0.05 * $edad +"€";
-        }
-    }
-
-    function parImpar($num){
-        print $num%2==0 ? "Es par": "Es impar";
-    }
-
-    // function fibonacci(){
-    //     while($fin < 10000){
-
-    //     }
-    // }
-
-    function tablaMultiplicar(){
-        for ($i = 0; $i <= 10; $i++) { 
-            for ($j = 0; $j <= 10 ; $j++) { 
-                print $i * $j;
-            }
-        }
+function bingo($edad)
+{
+    if ($edad < 75 || $edad > 80) {
+        print "No puede participar";
+    } else {
+        print "El premio es: " . (0.05) * $edad . "€";
     }
 }
+print "Funcion 8: ";
+print bingo(66) . "<br>";
+
+function parImpar($num)
+{
+    print $num % 2 == 0 ? "Es par" : "Es impar";
+}
+print "Funcion 9: ";
+print parImpar(66) . "<br>";
+
+function fibonacci()
+{
+    $fin = 10000;
+    $a = 1;
+    $b = 2;
+    $c = $a + $b;
+    print $a . ", " . $b . ", ";
+    while ($c < $fin) {
+        $a = $b;
+        $b =  $c;
+        $c = $a + $b;
+
+        if ($c < $fin) {
+            print $c . ", ";
+        }
+    }
+    print "<br>";
+}
+print "Funcion 10: ";
+print fibonacci();
+
+
+function tablaMultiplicar()
+{
+    for ($i = 1; $i <= 10; $i++) {
+        for ($j = 1; $j <= 10; $j++) {
+            print $i * $j . " ";
+        }
+        print "<br>";
+    }
+}
+print "Funcion 11: " . "<br>";
+print tablaMultiplicar() . "<br>";
+
+
+function factorial($num)
+{
+    $i = 1;
+    $resultado = 1;
+    do {
+        $resultado *= $i;
+        $i++;
+    } while ($i <= $num);
+    print $resultado;
+}
+print "Funcion 12: ";
+print factorial(6) . "<br>";
