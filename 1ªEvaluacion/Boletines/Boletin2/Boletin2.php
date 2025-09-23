@@ -38,7 +38,11 @@ print numerosPares() . "<br>";
 
 function mesesComM(){
     $meses=array('enero','febrero','marzo','abril', 'mayo','junio', 'julio','agosto', 'septiembre', 'octubre', 'noviemnbre', 'diciembre');
-    
+    for ($i = 0; $i < 12; $i++) { 
+        if ($meses[$i] == "m"){
+            $mesesM =
+        }
+    }
 }
 print "Función 5: ";
 print mesesComM() . "<br>";
