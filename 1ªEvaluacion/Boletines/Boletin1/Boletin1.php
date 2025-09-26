@@ -138,11 +138,15 @@ print fibonacci();
 
 function tablaMultiplicar()
 {
+    print "<table border='1' cellspacing='0' cellpadding='5' style='border-collapse: collapse; text-align: center;'>";
+    
     for ($i = 1; $i <= 10; $i++) {
+        print "<tr>";
+        print "<th>$i</th>"; // Cabecera lateral en negrita
         for ($j = 1; $j <= 10; $j++) {
-            print $i * $j . " ";
+            echo "<td>" . ($i * $j) . "</td>"; // Celdas normales
         }
-        print "<br>";
+        print "</tr>";
     }
 }
 print "Funcion 11: " . "<br>";
