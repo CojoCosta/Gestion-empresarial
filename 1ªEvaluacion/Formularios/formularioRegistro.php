@@ -22,40 +22,44 @@
     <form class="row g-3" action="datosFormulario.php" method="post">
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="inputEmail4">
+            <input type="text" class="form-control" id="inputEmail4" name="nombre">
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Apellidos</label>
-            <input type="password" class="form-control" id="inputPassword4">
+            <input type="text" class="form-control" id="inputPassword4" name="apellido">
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <input type="email" class="form-control" id="inputAddress" placeholder="1234 Main St" name="correo">
         </div>
 
         <div class="col-md-4">
             <label for="inputState" class="form-label">Estudios</label>
-            <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
+            <select id="inputState" class="form-select" name="estudios">
+                <option selected value="ESO">ESO</option>
+                <option value="CM FP">CM FP</option>
+                <option value="CS FP">CS FP</option>
+                <option value="Universidad">Universidad</option>
             </select>
         </div>
         <div class="col-md-4">
             <label for="inputState" class="form-label">Estado civil</label>
-            <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
+            <select id="inputState" class="form-select" name="estado">
+                <option selected value="soltero/a">Soltero/a</option>
+                <option value="casado/a">Casado/a</option>
+                <option value="divorciado/a">Divorciado/a</option>
+                <option value="viudo/a">Viudo/a</option>
             </select>
         </div>
         
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
             <label class="form-check-label" for="flexRadioDefault1">
                 Hombre
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
             <label class="form-check-label" for="flexRadioDefault2">
                 Mujer
             </label>
