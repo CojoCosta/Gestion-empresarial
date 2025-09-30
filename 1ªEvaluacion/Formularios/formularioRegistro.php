@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Registro</title>
     <style>
+        *{
+            padding: 5px;
+        }
         form {
             padding: 20px;
+            width: 80%;
         }
+
 
         label.form-label {
             font-weight: bold;
@@ -26,7 +31,7 @@
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" id="inputPassword4" name="apellido">
+            <input type="text" class="form-control" id="inputPassword4" name="apellidos">
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Email</label>
