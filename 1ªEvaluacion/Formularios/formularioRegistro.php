@@ -35,7 +35,7 @@
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputAddress" placeholder="1234 Main St" name="correo">
+            <input type="email" class="form-control" id="inputAddress" placeholder="1234 Main St" name="email">
         </div>
 
         <div class="col-md-4">
@@ -87,7 +87,7 @@
             <label class="form-check-label" for="flexSwitchCheckDefault">Italiano</label>
         </div>
         
-        <textarea name="informacion" id="informacion" placeholder="incidencias" style="resize: none;" cols="20"></textarea>
+        <textarea name="info" id="informacion" placeholder="incidencias" style="resize: none;" cols="20"></textarea>
         
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Enviar</button>
