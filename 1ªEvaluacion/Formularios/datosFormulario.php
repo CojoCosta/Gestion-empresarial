@@ -57,6 +57,8 @@
         } else {
             $estudios = filter_var($_POST['estado'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         }
+
+        
         if (!isset($_POST['genero']) || empty($_POST['genero'])) {
             echo "<span style=\"color:red;\">El campo genero es obligatorio</span><br>";
             $isChecked = false;
