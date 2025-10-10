@@ -51,7 +51,7 @@ class Cuadrado extends Figura
 
     public function area()
     {
-        echo "El area del cuadrado es " . number_format($lado * $lado, 2);
+        echo "El area del cuadrado es " . number_format(pow($this -> lado, 2), 2);
     }
     // public function mostrarColor() {}
 }
