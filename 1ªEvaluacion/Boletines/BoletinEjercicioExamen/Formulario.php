@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <h2 class="display-1">Formulario de suscripción a revistas</h2>
+    <h2 class="display-1">Suscripción a revistas</h2>
     <form class="form" action="recogidaDatos.php" method="post">
         <div>
             <label for="nombre">Nombre:</label>
@@ -33,8 +33,8 @@
         </div>
         <div>
             <label for="interes">¿Desea recicibir información sobra las publicaciones?</label><br>
-            <input type="radio" name="interes" id="si"><span>Sí, estoy interesado</span><br>
-            <input type="radio" name="interes" id="no"><span>No, gracias</span>
+            <input type="radio" name="interes" value="si"><span>Sí, estoy interesado</span><br>
+            <input type="radio" name="interes"  value="no"><span>No, gracias</span>
             <br>
         </div>
         <div>
@@ -46,8 +46,8 @@
             <input type="checkbox" name="desarrollo" id=""><span>Desarroll Web</span><br>
         </div>
         <div>
-            <label for="opciones">Formas de suscripción: </label>
-            <select name="opciones" id="opciones">
+            <label for="suscripcion">Formas de suscripción: </label>
+            <select name="suscripcion" id="suscripcion">
                 <option value="elegir" default>Elegir</option>
                 <option value="semanal">Semanal</option>
                 <option value="mensual">Mensual</option>
