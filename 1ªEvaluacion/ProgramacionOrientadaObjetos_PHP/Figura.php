@@ -1,9 +1,8 @@
 <?php
-//Definir clase abstracta
 abstract class Figura
 {
     protected $color;
-    protected static $texto = "El color de la figura es: ";
+    private static $texto = "El color de la figura es: ";
     const EXPRE = "... que chuliogay";
     const GREEN = "";
     public function __construct($color)
@@ -11,57 +10,12 @@ abstract class Figura
         $this->color = $color;
     }
 
-    abstract public function mostrarColor();
-    // 
-
-}
-
-class Circulo extends Figura
-{
-    private $radio;
-    public function __construct($color, $radio)
-    {
-        parent::__construct($color);
-        $this->$radio = $radio;
-    }
+    abstract public function area();
 
     public function mostrarColor()
     {
-        echo self::$texto . $this->color . Figura::EXPRE;
+        echo self::$texto . $this->color;
     }
-
-    public function area()
-    {
-        echo "El area del circulo es" . number_format(pi() * pow($this->radio, 2), 2);
-    }
+    abstract public function volumen();
 }
-class Cuadrado extends Figura
-{
-    private $lado;
-    public function __construct($color, $lado)
-    {
-        parent::__construct($color);
-        $this->lado = $lado;
-    }
-
-    public function mostrarColor()
-    {
-        echo self::$texto . $this->color . Figura::EXPRE;
-    }
-
-    public function area()
-    {
-        echo "El area del cuadrado es " . number_format(pow($this -> lado, 2), 2);
-    }
-    // public function mostrarColor() {}
-}
-
-$circulo1 = new Circulo("rojo", 5);
-
-$circulo1->mostrarColor();
-
-echo "<br>";
-
-$circulo1->area();
-
 ?>
