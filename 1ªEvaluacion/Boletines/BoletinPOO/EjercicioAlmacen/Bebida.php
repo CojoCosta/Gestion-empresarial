@@ -21,7 +21,7 @@ class Bebida
         $this->litros = $litros;
     }
 
-    public function setprecio($precio){
+    public function setPrecio($precio){
         $this->precio = $precio;
     }
 
