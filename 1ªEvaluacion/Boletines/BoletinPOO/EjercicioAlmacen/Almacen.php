@@ -11,7 +11,6 @@ class Almacen {
     }
 
     public function agregarProducto($bebida) {
-
         foreach ($this->estanterias as $fila) {
             foreach ($fila as $item) {
                 if ($item !== null && $item->getId() == $bebida->getId()) {
@@ -20,7 +19,6 @@ class Almacen {
                 }
             }
         }
-
 
         for ($i = 0; $i < $this->filas; $i++) {
             for ($j = 0; $j < $this->columnas; $j++) {
@@ -117,8 +115,7 @@ class Almacen {
             }
             echo "</tr>";
         }
-    
         echo "</table><br>";
     }
 }
-?>
+?> 
