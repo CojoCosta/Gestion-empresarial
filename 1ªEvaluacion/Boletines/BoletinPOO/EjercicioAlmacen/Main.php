@@ -1,35 +1,33 @@
 <?php
+require_once "Agua.php";
+require_once "Refresco.php";
+require_once "Almacen.php";
 
-class Main extends Bebida implements Almacen{
-    
-    private $matriz = [4][4];
+$almacen = new Almacen(2, 3);
 
-    function calcularPrecio($matriz){
-        $acu = 0;
-        for ($i=0; $i < $matriz[$i].ob_get_length(); $i++) { 
-            for ($j=0; $j < $matriz[$j].ob_get_length(); $j++) { 
-                acu += $matriz[$i][$j].getPrecio();
-            }
-        }
-    }
+$agua1 = new Agua(1, 1.5, 1.00, "Mondariz", "Manantial del Pirineo");
+$agua2 = new Agua(2, 2.0, 1.50, "Cabreiroa", "Sierra Nevada");
 
-    function precioMarca($matriz){
-        
-    }
-    
-    function precioEstanteria($matriz){
-        
-    }
-    
-    function AgregarProducto($matriz){
-        
-    }
-    
-    function eliminarProducto($matriz){
-        
-    }
-    
-    function mostrar($matriz){
-        
-    }
-}
+$cola = new Refresco(3, 1.5, 2.00, "Nestea", 12, true);
+$fanta = new Refresco(4, 2.0, 2.20, "Kas", 10, false);
+$colaZero = new Refresco(5, 1.5, 2.00, "Coca-Cola", 0, false);
+
+$almacen->agregarProducto($agua1);
+$almacen->agregarProducto($agua2);
+$almacen->agregarProducto($cola); 
+$almacen->agregarProducto($fanta);
+$almacen->agregarProducto($colaZero);
+
+$almacen->mostrarInformacion();
+$almacen->mostrarMatriz();
+
+echo "<hr><b>Precio total del almacén:</b> " . $almacen->calcularPrecioTotal() . " €<br>";
+echo "<b>Precio total de Coca-Cola:</b> " . $almacen->calcularPrecioMarca("Coca-Cola") . " €<br>";
+echo "<b>Precio total de estantería 0:</b> " . $almacen->calcularPrecioEstanteria(0) . " €<br>";
+
+$almacen->eliminarProducto(2); 
+
+echo "<hr><b>Después de eliminar un producto:</b><br>";
+$almacen->mostrarInformacion();
+$almacen->mostrarMatriz();
+?>

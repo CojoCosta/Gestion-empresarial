@@ -1,10 +1,10 @@
 <?php
-class Bebida
+abstract class Bebida
 {
-    private $id;
-    private $litros;
-    private $precio;
-    private $marca;
+    protected $id;
+    protected $litros;
+    protected $precio;
+    protected $marca;
 
     public function __construct($id, $litros, $precio, $marca){
         $this->id = $id;
@@ -43,5 +43,12 @@ class Bebida
     
     public function getMarca(){
         return $this->marca;
+    }
+
+    abstract public function calcularPrecio();
+
+    public function mostrarDatos()
+    {
+        echo "ID: {$this->id},Litros: {$this->litros} Precio: {$this->calcularPrecio()} Marca: {$this->marca}";
     }
 }

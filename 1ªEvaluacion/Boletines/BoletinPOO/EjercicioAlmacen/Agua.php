@@ -15,4 +15,13 @@ class Agua extends Bebida{
         return $this -> origen;
     }
 
+    public function calcularPrecio()
+    {
+        return $this->precio;
+    }
+    public function mostrarDatos()
+    {
+        parent::mostrarDatos();
+        echo "Origen: {$this->origen}";
+    }
 }

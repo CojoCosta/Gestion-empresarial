@@ -40,7 +40,7 @@ class Libro {
         if (strlen($refLibro) > 3) {
             $this->refLibro = $refLibro;
         } else {
-            echo '<p> Longitud no válida <p>';
+            echo "<p> Longitud no válida <p>";
         }
     }
     
@@ -53,43 +53,36 @@ class Libro {
     }
 
     public function printTitulo() {
-        echo 'El título del libro', $this->titulo, '<br>';
+        echo "Libro: ", $this->titulo, "<br>";
     }
 
     public function printAutor() {
-        echo 'El autor del libro es ', $this->autor, '<br>';
+        echo "Autor: ", $this->autor, "<br>";
     }
 
     public function printLibro() {
-        echo 'El autor del libro es ', $this->autor, '<br>';
-        echo 'El título del libro ', $this->titulo, '<br>';
-        echo 'El número de páginas es ', $this->paginas, '<br>';
+        echo "Autor: ", $this->autor, "<br>";
+        echo "Libro: ", $this->titulo, "<br>";
+        echo "Páginas: ", $this->paginas, "<br>";
         if (strlen($this->refLibro) > 0) {
-            echo 'La referencia del libro es ', $this->refLibro , '<br>';
+            echo "Referencia: ", $this->refLibro , "<br>";
         }
-        echo 'El libro fue prestado ', $this->prestado ,' veces <br>';
+        echo "Prestado: ", $this->prestado ," veces <br>";
         
         if ($this->contieneCD){
-            echo 'El libro contiene CD';
+            echo "Con CD";
         }
+        echo "<br>";
     }
 
 }
 
-
-
-$libro1 = new Libro('Mila', 'Vais a suspender', 100, '',0);
-
-print $libro1->getAutor();
-print $libro1->getTitulo();
-print $libro1->getPaginas();
-echo '<br>';
-//$libro1->setRefLibro(5522);
+$libro1 = new Libro("Diego Costa ", '"No aprendo nada" ', "50","",0);
 $libro1->setPrestado();
 $libro1->printLibro();
 
 
-$libro2 = new Libro('Javi', 'Viendo la luz', 150, '',0);
+$libro2 = new Libro("Pablo ", '"Italiani sabe algo¿?"', "1255","",25);
 $libro2->printLibro();
 
-print 'El número de libros que hay es '. Libro::$numLibros;
+print "Nº de libros: ". Libro::$numLibros;
