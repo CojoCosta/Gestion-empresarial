@@ -11,11 +11,17 @@ class Empleado{
     }
 
     public function setEmpleado($nombre, $apellidos, $telefono, $departamento){
-        $sql="INSERT INTO empleados(nombre,apellidos,telefono,departamento) VALUES ('$nombre','%apellidos','$telefono','$departamento')";
+        $sql="INSERT INTO empleados(nombre,apellidos,telefono,depart) VALUES ('$nombre','$apellidos','$telefono','$departamento')";
         $result = $this -> database -> query($sql);
         $this -> database = null;
         return $result;
     }
 
-    
+    public function getEmpleado(){
+        $sql = "SELECT * FROM empleados";
+        $result = $this -> database ->query($sql);
+        $this -> empleado = $result ->  fetchAll(PDO:: FETCH_ASSOC);
+        $this -> database = null;
+        return $this -> empleado;
+    }
 }

@@ -5,8 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de inscripcion empleado</title>
     <?php
-        if ((isset($_POST['nombre'])) && ($_POST['nombre']!= '') && (isset($_POST['apellidos'])) && ($_POST['apellidos']!= '') && (isset($_POST['telefono'])) && ($_POST['telefono'] != '') && (isset($_POST['departamento'])) && ($_POS['departamento'] !='')) {
-            
+        if ((isset($_POST['nombre'])) && ($_POST['nombre']!= '') && (isset($_POST['apellidos'])) && ($_POST['apellidos']!= '') && (isset($_POST['telefono'])) && ($_POST['telefono'] != '') && (isset($_POST['departamento'])) && ($_POST['departamento'] !='')) {
+            //llamada al moddelo logico
+            require_once 'modelos/modelo.php';
+            //crear objeto
+            $empleado = new Empleado();
+            //Booleana
+            $resultadoConsulta = $empleado -> setEmpleado($_POST['nombre'], $_POST['apellidos'], $_POST['telefono'], $_POST['departamento']);
+            if ($resultadoConsulta) {
+                echo "<p style=\"color:green\">El usuario se ha añadido correctamente</p>";
+            }else {
+                echo "<p style=\"color:red\">El usuario no se ha añadido</p>";
+            }
         }
     ?>
 </head>
