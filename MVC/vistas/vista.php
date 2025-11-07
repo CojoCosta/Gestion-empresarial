@@ -30,10 +30,11 @@
             <td><?php echo $result[$i]['apellidos'] ?></td>
             <td><?php echo $result[$i]['telefono'] ?></td>
             <td><?php echo $result[$i]['depart'] ?></td>
-            <td><?php echo "<a href=\"../controladores/controladorEditar.php?id={$result[$i]['id']}\">Actualizar<a/>" ?></td>
+            <td><?php echo "<a href=\"../controladores/controladorEditar.php?id={$result[$i]['id']}\">Editar<a/>" ?></td>
             <td><?php echo "<a href=\"../controladores/controladorBorrar.php?id={$result[$i]['id']}\">Borrar<a/>" ?></td>
         </tr>
         <?php } ?>
     </table>
+    <?php echo "<br><a href=../index.php>Vuelve</a>"; ?>
 </body>
 </html>
