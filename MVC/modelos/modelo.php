@@ -24,4 +24,11 @@ class Empleado{
         $this -> database = null;
         return $this -> empleado;
     }
+
+    public function editar($id){
+        $sql="SELECT nombre, apellidos, telefono, depart FROM empleados WHERE id={$id}";
+        $result = $this -> database -> query($sql);
+        $dato = $result -> fetchAll(PDO::FETCH_ASSOC);
+        return $dato;
+    }
 }
