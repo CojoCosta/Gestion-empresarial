@@ -19,8 +19,8 @@ class Empleado{
 
     public function getEmpleado(){
         $sql = "SELECT * FROM empleados";
-        $result = $this -> database ->query($sql);
-        $this -> empleado = $result ->  fetchAll(PDO:: FETCH_ASSOC);
+        $result = $this -> database -> query($sql);
+        $this -> empleado = $result -> fetchAll(PDO:: FETCH_ASSOC);
         $this -> database = null;
         return $this -> empleado;
     }
