@@ -12,7 +12,7 @@
         <input type="text" name="apellidos" id="apellidos" value="<?php echo $dato[0]['apellidos'] ?>">
         <input type="tel" name="telefono" id="telefono" value="<?php echo $dato[0]['telefono'] ?>">
         <input type="text" name="departamento" id="departamento" value="<?php echo $dato[0]['depart'] ?>">
-        <input type="hidden" name="id" id="id" value="<?php $_GET['id'] ?>">
+        <input type="hidden" name="id" id="id" value="<?php echo $_GET['id'] ?>">
         <input type="submit" value="Actualizar">
     </form>
 </body>

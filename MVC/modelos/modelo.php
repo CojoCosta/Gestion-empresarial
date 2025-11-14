@@ -31,8 +31,8 @@ class Empleado{
         $dato = $result -> fetchAll(PDO::FETCH_ASSOC);
         return $dato;
     }
-    public function actualizar($id){
-        $sql = "UPDATE empleados SET nombre = {$_POST['nombre']}, apellidos = {$_POST['apellidos']}, telefono = {$_POST['telefono']},departamento = {$_POST['depart']} WHERE id = {$id}";
+    public function actualizar($id, $nombre, $apellidos, $telefono, $departamento){
+        $sql = "UPDATE empleados SET nombre = '$nombre', apellidos = '$apellidos', telefono = '$telefono', departamento = '$departamento' WHERE id='{$id}'";
         $result = $this -> database -> query($sql);
         $this -> database = null;
         return $result;
