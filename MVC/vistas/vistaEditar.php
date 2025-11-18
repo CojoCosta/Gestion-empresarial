@@ -13,6 +13,9 @@
         <input type="tel" name="telefono" id="telefono" value="<?php echo $dato[0]['telefono'] ?>">
         <input type="text" name="departamento" id="departamento" value="<?php echo $dato[0]['depart'] ?>">
         <input type="hidden" name="id" id="id" value="<?php echo $_GET['id'] ?>">
+        <input type="file" name="imagen" id="imagen"><br>
+        <td><img src="../" <?php echo $result[0]['imagenes']?> alt="foto" style="width:90px;height:auto;"</td>
+
         <input type="submit" value="Actualizar">
     </form>
 </body>
