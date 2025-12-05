@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: "Poppins", Arial, sans-serif;
-            background: linear-gradient(135deg, #ff63a5, #6a5cff, #4ddcff);
+            background: linear-gradient(135deg, #8cd2f4, #2a69ac, #8cd2f4);
             background-size: 300% 300%;
             animation: fondoMovimiento 12s ease infinite;
             margin: 0;
@@ -37,7 +37,7 @@
             margin-top: 40px;
             font-size: 32px;
             font-weight: 700;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+            text-shadow: 0 2px 8px rgba(113, 210, 248, 0.25);
         }
 
         .formulario {
@@ -72,7 +72,7 @@
         .formulario input[type="tel"],
         .formulario input[type="file"] {
             padding: 12px;
-            border: 2px solid #dcdcdc;
+            border: 2px solid #b8d9f0;
             border-radius: 12px;
             font-size: 15px;
             transition: 0.25s;
@@ -83,8 +83,8 @@
         .formulario input[type="number"]:focus,
         .formulario input[type="tel"]:focus,
         .formulario input[type="file"]:focus {
-            border-color: #719bf7ff;
-            box-shadow: 0 0 10px rgba(57, 137, 212, 0.5);
+            border-color: #2a69ac;
+            box-shadow: 0 0 10px rgba(42, 105, 172, 0.5);
         }
 
         .formulario input[type="submit"] {
@@ -95,7 +95,7 @@
             font-size: 17px;
             font-weight: 700;
             color: white;
-            background: linear-gradient(45deg, #ee4ad8ff, #124faaff, #4eb3e2ff);
+            background: linear-gradient(45deg, #8cd2f4, #2a69ac, #ffffffff);
             background-size: 200% 200%;
             animation: botonMovimiento 4s ease infinite;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -132,7 +132,7 @@
         }
 
         a:hover {
-            color: #ffe7ff;
+            color: #e8f7ff;
             text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
 
@@ -143,20 +143,19 @@
             margin-top: 15px;
         }
     </style>
-    
     <?php
-    if ((isset($_POST['nombre'])) && ($_POST['nombre'] != '') && (isset($_POST['apellidos']))  && ($_POST['apellidos'] != '') && (isset($_POST['edad'])) && ($_POST['edad'] != '') && (isset($_POST['telefono'])) && ($_POST['telefono'] != '')) {
+    if ((isset($_POST['nombre'])) && ($_POST['nombre'] != '') && (isset($_POST['apellidos']))  && ($_POST['apellidos'] != '') && (isset($_POST['edad'])) && ($_POST['edad'] != '') && (isset($_POST['tlf'])) && ($_POST['tlf'] != '')) {
         //llamada al moddelo logico
         require_once 'modelos/modelo.php';
 
-        $directorio = "imagenes/" .
-            $nombre_imagen = basename($_FILES['imagen']['name']);
+        $directorio = "imagenes/";
+        $nombre_imagen = basename($_FILES['imagen']['name']);
         $rutaImagen = $directorio . $nombre_imagen;
         if (move_uploaded_file($_FILES['imagen']['tmp_name'], $rutaImagen)) {
             //crear objeto
             $usuario = new Usuario();
             //Booleana
-            $resultadoConsulta = $usuario->setUsuario($_POST['nombre'], $_POST['apellidos'], $_POST['edad'], $_POST['telefono'], $rutaImagen);
+            $resultadoConsulta = $usuario->setUsuario($_POST['nombre'], $_POST['apellidos'], $_POST['edad'], $_POST['tlf'], $rutaImagen);
             if ($resultadoConsulta) {
                 echo "<p style=\"color:green\">El usuario se ha añadido correctamente</p>";
             } else {
@@ -174,7 +173,7 @@
         <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos"><br>
         <input type="number" name="edad" id="edad" placeholder="Edad"><br>
         <input type="tel" name="tlf" id="tlf" placeholder="Telefono"><br>
-        <input type="file" name="foto" id="foto"><br>
+        <input type="file" name="imagen" id="imagen"><br>
         <input type="submit" value="Crear cuenta">
     </form>
     <a href="controladores/controlador.php">Lista usuarios</a>
