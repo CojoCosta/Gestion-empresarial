@@ -150,7 +150,7 @@
         <input type="tel" name="tlf" id="tlf" value="<?php echo $dato[0]['telefono'] ?>">
         <input type="hidden" name="id" id="id" value="<?php echo $_GET['id'] ?>">
         <input type="file" name="imagen" id="imagen"><br>
-        <td><img src="../" <?php echo $result[0]['imagenes'] ?> alt="imagen" style="width:90px;height:auto;" </td>
+        <td><img src="<?php echo "../".$dato[0]['imagen'] ?>" alt="imagen" style="width:90px;height:auto;" </td>
             <input type="submit" value="Actualizar">
     </form>
 </body>

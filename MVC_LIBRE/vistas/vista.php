@@ -178,7 +178,7 @@
                 <td><?php echo $result[$i]['apellidos'] ?></td>
                 <td><?php echo $result[$i]['edad'] ?></td>
                 <td><?php echo $result[$i]['telefono'] ?></td>
-                <td><img src="../" <?php echo $result[$i]['imagen'] ?> alt="foto" style="width:90px;height:auto;" </td>
+                <td><img src= "<?php  echo "../".$result[$i]['imagen'] ?> "alt="foto" style="width:90px;height:auto;" </td>
                 <td><?php echo "<a href=\"../controladores/controladorEditar.php?id={$result[$i]['id']}\">Editar<a/>" ?></td>
                 <td><?php echo "<a href=\"../controladores/controladorBorrar.php?id={$result[$i]['id']}\">Borrar<a/>" ?></td>
             </tr>
