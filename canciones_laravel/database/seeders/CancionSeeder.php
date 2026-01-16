@@ -21,6 +21,7 @@ class CancionSeeder extends Seeder
                 'grupo' => 'Rammstein',
                 'album' => 'Zeit',
                 'anio' => '2021'
+                //'create_at' => now()
             ],
             [
                 'titulo' => 'Fear of the dark',
