@@ -29,3 +29,4 @@ Route :: get('/eliminar/{id}', [CancionController::class,'eliminarCancion'])->na
 
 Route :: get('/editar/{id}', [CancionController::class,'editarCancion'])->name('editarCancion');
 
+Route :: post('/actualizar', [CancionController::class, 'actualizarCancion'])->name('actualizarCancion');

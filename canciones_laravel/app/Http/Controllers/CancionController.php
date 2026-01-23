@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cancion;
 
-class CancionController extends Controller{
-    public function index(){
+class CancionController extends Controller
+{
+    public function index()
+    {
         $songs = Cancion::get();
         return view('inicio', ['canciones' => $songs]);
     }
 
-    public function agregarCancion(Request $peticion){
+    public function agregarCancion(Request $peticion)
+    {
         $cancion = new Cancion();
         $cancion->titulo = $peticion->titulo;
         $cancion->album = $peticion->album;
@@ -22,16 +25,30 @@ class CancionController extends Controller{
         return redirect()->route('inicio'); //->with('mensaje', 'Canción agregada correctamente');
     }
 
-    public function eliminarCancion(Request $peticion){
+    public function eliminarCancion(Request $peticion)
+    {
         $idEliminar = $peticion->route('id');
         $cancion = Cancion::findOrFail($idEliminar);
         $cancion->delete();
         return redirect()->route('inicio')->with('mensaje', 'Canción eliminada correctamente');
     }
 
-    public function editarCancion(Request $peticion){
-        $idEditar= $peticion->route('id');
+    public function editarCancion(Request $peticion)
+    {
+        $idEditar = $peticion->route('id');
         $cancion = Cancion::findOrFail($idEditar);
-        return view('editar_cancion',['cancion' => $cancion]);
+        return view('editar_cancion', ['cancion' => $cancion]);
+    }
+
+    public function actualizarCancion(Request $peticion)
+    {
+        $cancion = $peticion->id;
+        $cancionActualizada = Cancion::findOrFail($cancion);
+        $cancionActualizada->titulo = $peticion->titulo;
+        $cancionActualizada->album = $peticion->album;
+        $cancionActualizada->grupo = $peticion->grupo;
+        $cancionActualizada->anio = $peticion->anio;
+        $cancionActualizada->save();
+        return redirect()->route('inicio')->with('mensaje', 'Canción actualizada correctamente');
     }
 }

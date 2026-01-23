@@ -7,8 +7,8 @@
         <tr>
             <td>Título</td>
             <td>Álbum</td>
-            <td></td>
-            <td></td>
+            <td>Grupo</td>
+            <td>Año</td>
         </tr>
         <tr>
             <td><input type="text" name="titulo" id="titulo" placeholder="Título"></td>
